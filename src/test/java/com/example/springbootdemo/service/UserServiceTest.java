@@ -25,8 +25,8 @@ public class UserServiceTest {
 
     @Test
     public void testFindById() {
-        Long userId = 1L;
-        User mockUser = new User(1L, "Ivan Ivanov");
+        Long userId = 3L;
+        User mockUser = new User(3L, "Ivan Ivanov");
 
         when(userRepository.getOne(userId)).thenReturn(mockUser);
 
@@ -38,8 +38,8 @@ public class UserServiceTest {
     @Test
     public void testFindAll() {
         List<User> mockUsers = new ArrayList<>();
-        mockUsers.add(new User(1L, "Ivan Ivanov"));
-        mockUsers.add(new User(2L, "Alex Alexey"));
+        mockUsers.add(new User(4L, "Ivan Ivanov"));
+        mockUsers.add(new User(5L, "Alex Alexey"));
 
         when(userRepository.findAll()).thenReturn(mockUsers);
 
@@ -50,8 +50,8 @@ public class UserServiceTest {
 
     @Test
     public void testSaveUser() {
-        User userToSave = new User(1L, "Ivan Ivanov");
-        User savedUser = new User(2L, "Alex Alexey");
+        User userToSave = new User(4L, "Ivan Ivanov");
+        User savedUser = new User(5L, "Alex Alexey");
 
         when(userRepository.save(userToSave)).thenReturn(savedUser);
 
@@ -62,7 +62,7 @@ public class UserServiceTest {
 
     @Test
     public void testDeleteById() {
-        Long userId = 1L;
+        Long userId = 3L;
 
         userService.deleteById(userId);
 

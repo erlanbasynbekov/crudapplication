@@ -26,8 +26,8 @@ public class UserControllerTest {
     @Test
     public void testFindAll() {
         List<User> mockUsers = new ArrayList<>();
-        mockUsers.add(new User(1L, "Ivan Ivanov"));
-        mockUsers.add(new User(2L, "Sanya Sanyok"));
+        mockUsers.add(new User(4L, "Ivan Ivanov"));
+        mockUsers.add(new User(5L, "Sanya Sanyok"));
 
         String expectedViewName = "user-list";
 
@@ -53,7 +53,7 @@ public class UserControllerTest {
 
     @Test
     public void testCreateUser() {
-        User user = new User(1L, "Ivan Ivanov");
+        User user = new User(3L, "Ivan Ivanov");
 
         String actualViewName = userController.createUser(user);
 
@@ -63,7 +63,7 @@ public class UserControllerTest {
 
     @Test
     public void testDeleteUser() {
-        Long userId = 1L;
+        Long userId = 3L;
 
         String actualViewName = userController.deleteUser(userId);
 
@@ -73,10 +73,10 @@ public class UserControllerTest {
 
     @Test
     public void testUpdateUserForm() {
-        Long userId = 1L;
-        User mockUser = new User(1L, "Ivan Ivanov");
+        Long userId = 3L;
+        User mockUser = new User(3L, "Ivan Ivanov");
 
-        String expectedViewName = "/user-update";
+        String expectedViewName = "user-update";
 
         when(userService.findById(userId)).thenReturn(mockUser);
 
@@ -90,7 +90,7 @@ public class UserControllerTest {
 
     @Test
     public void testUpdateUser() {
-        User user = new User(1L, "Ivan Ivanov");
+        User user = new User(3L, "Ivan Ivanov");
 
         String actualViewName = userController.updateUser(user);
 
