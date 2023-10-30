@@ -9,16 +9,14 @@ import org.openqa.selenium.By;
 public class UITest {
 
     public static void main(String[] args) {
-        // Set the path to your ChromeDriver executable
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\yerla\\Downloads\\chromedriver-win64\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Run in headless mode (without opening a browser window)
+        options.addArguments("--headless"); // Run in headless mode
 
         WebDriver driver = new ChromeDriver(options);
 
         try {
-            // Open the web page
             driver.get("http://localhost:8080/users");
 
             // Check if "No users found!" message is displayed
@@ -31,7 +29,6 @@ public class UITest {
                 assert userTable.isDisplayed() : "User table is not displayed";
             }
 
-            // You can continue adding more assertions for other elements or interactions
 
         } finally {
             // Close the browser
